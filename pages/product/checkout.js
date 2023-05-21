@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import Link from 'next/link'
 import React ,{useState} from 'react'
 import product from '@/models/product'

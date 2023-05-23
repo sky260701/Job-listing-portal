@@ -108,7 +108,9 @@ function tshirts({products}) {
 
 
 export async function getServerSideProps(context) {
+  require('dotenv').config();
   if ( !mongoose.connections[0].readyState) {
+    console.log(context)
     await mongoose.connect(process.env.MoNGO_URI)
   }
   let products = await product.find({category:"finearts"})

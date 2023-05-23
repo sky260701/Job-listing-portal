@@ -111,7 +111,7 @@ export async function getServerSideProps(context) {
   if ( !mongoose.connections[0].readyState) {
     await mongoose.connect(process.env.MoNGO_URI)
   }
-  let products = await product.find({category:"finearts"})
+  let products = await product.find({category:"finearts"}).maxTimeMS(60000)
   
 
   return {

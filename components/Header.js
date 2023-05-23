@@ -9,9 +9,18 @@ import  c2 from "../pages/images/c2.jpg";
 import  c3 from "../pages/images/c3.webp";
 import  c4 from "../pages/images/c4.webp";
 import Link  from "next/link";
+//import {dotenv} from "dotenv";
+
+// Load the environment variables
+
+
 
 
 function Header() {
+
+  console.log(process.env.MONGO_URI);
+
+  console.log( process.env.MONGO_URI)
 
   const settings = {
     dots: true,

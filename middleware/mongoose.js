@@ -6,7 +6,7 @@ const connectdb = handler => async (req ,res) => {
          return handler(req ,res) ;
  } else {
     console.log(process.env.MONGO_URI)
-     await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akash%401234@cluster0.e3olq6a.mongodb.net/?retryWrites=true&w=majority")
+     await mongoose.connect(process.env.MONGO_URI)
      return handler(req ,res) ;
  }
 }

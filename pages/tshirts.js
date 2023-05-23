@@ -111,7 +111,7 @@ export async function getServerSideProps(context) {
   require('dotenv').config();
   if ( !mongoose.connections[0].readyState) {
     console.log(context)
-    await mongoose.connect(process.env.MoNGO_URI)
+    await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akash%401234@cluster0.e3olq6a.mongodb.net/?retryWrites=true&w=majority")
   }
   let products = await product.find({category:"finearts"})
   

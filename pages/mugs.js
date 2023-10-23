@@ -14,9 +14,9 @@ function mugs({products}) {
           <img alt="ecommerce" class="object-top object-center w-full h-full block" src={item.imagesrc} />
         </a>
         <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category}</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">{item.title}</h2>
-          <p class="mt-1">{item.price}  ₹</p>
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{item.category} Engineer</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">{item.title} </h2>
+          <p class="mt-1">{item.price}  LPA</p>
         </div>
       </div>
        ))}
@@ -29,9 +29,9 @@ function mugs({products}) {
 
 export async function getServerSideProps(context) {
   if ( !mongoose.connections[0].readyState) {
-    await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akash%401234@cluster0.e3olq6a.mongodb.net/?retryWrites=true&w=majority")
+    await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akashdesh%401234@cluster0.nyb43ng.mongodb.net/")
   }
-  let products = await product.find({category : "crafts"})
+  let products = await product.find({category : "AI/ML"})
   
 
   return {

@@ -173,7 +173,7 @@ function Footer() {
     >
     © 2023 Copyright:
     <a class="text-white" href="https://tailwind-elements.com/"
-      >WALLDESIGNERS</a>
+      >GetPlaced</a>
   </div>
 </footer>
     </div>

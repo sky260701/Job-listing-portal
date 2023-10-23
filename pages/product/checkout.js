@@ -18,50 +18,39 @@ function checkout({products}) {
     console.log(item)
   }, ); // 
 
+
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [qualification, setQualification] = useState('');
+  const [file, setFile] = useState(null);
+
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    // You can handle form submission here, for example, sending data to the server.
+
+    // Clear form fields
+    setFullName('');
+    setEmail('');
+    setPhone('');
+    setQualification('');
+    setFile(null);
+  };
+
+
   return (
    
         <div className="py-8 px-4 md:px-6 2xl:px-0 flex justify-center items-center 2xl:mx-auto 2xl:container">
   <div className="flex flex-col justify-start items-start w-full space-y-9">
     <div className="flex justify-center flex-col items-start space-y-2">
-      {/* <button className="flex flex-row items-center text-gray-600 dark:text-white hover:text-gray-500 space-x-1">
-        <svg
-          className="fill-stroke"
-          width={14}
-          height={14}
-          viewBox="0 0 14 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2.91681 7H11.0835"
-            stroke="currentColor"
-            strokeWidth="0.666667"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M2.91681 7L5.25014 9.33333"
-            stroke="currentColor"
-            strokeWidth="0.666667"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M2.91681 7.00002L5.25014 4.66669"
-            stroke="currentColor"
-            strokeWidth="0.666667"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <p className="text-sm leading-none">Back</p>
-      </button> */}
-      {/* <p className="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 dark:text-gray-50">
-        Checkout
-      </p> */}
-      {/* <p className="text-base leading-normal sm:leading-4 text-gray-600 dark:text-white">
-        Home &gt; Electronics &gt; Headphones &gt; Cart &gt; Checkout
-      </p> */}
+      
+   
+     
     </div>
     <div className="flex flex-col xl:flex-row justify-center xl:justify-between space-y-6 xl:space-y-0 xl:space-x-6 w-full">
       <div className="xl:w-3/5 flex flex-col sm:flex-row xl:flex-col justify-start items-center bg-white-100 dark:bg-white-800 py-3 sm:py-0 xl:py-5 px-10 xl:w-full">
@@ -70,7 +59,7 @@ function checkout({products}) {
           {title}
           </p>
           <p className="text-base font-semibold leading-none text-gray-600 dark:text-white">
-            {price} ₹
+            {price} LPA
           </p>
         </div>
         <div className="mt-6 sm:mt-0 xl:my-10 xl:px-20 w-52 sm:w-96 xl:w-auto">
@@ -80,7 +69,71 @@ function checkout({products}) {
           />
         </div>
       </div>
-      <div className="p-8 bg-white-100 dark:bg-white-800 flex flex-col lg:w-full xl:w-3/5">
+
+      <div className="max-w-xl mx-auto mt-8 p-4 bg-white rounded shadow-md">
+      <h1 className="text-2xl font-semibold">Form</h1>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label htmlFor="fullName" className="block text-gray-600">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            className="w-full px-3 py-2 border rounded"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-gray-600">Email</label>
+          <input
+            type="email"
+            id="email"
+            className="w-full px-3 py-2 border rounded"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="phone" className="block text-gray-600">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            className="w-full px-3 py-2 border rounded"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="qualification" className="block text-gray-600">Qualification</label>
+          <input
+            type="text"
+            id="qualification"
+            className="w-full px-3 py-2 border rounded"
+            value={qualification}
+            onChange={(e) => setQualification(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="file" className="block text-gray-600">Upload PDF</label>
+          <input
+            type="file"
+            id="file"
+            className="w-full px-3 py-2 border rounded"
+            onChange={handleFileChange}
+            accept=".pdf"
+            required
+          />
+        </div>
+        <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+          Submit
+        </button>
+      </form>
+    </div>
+      {/* <div className="p-8 bg-white-100 dark:bg-white-800 flex flex-col lg:w-full xl:w-3/5">
         <button className="border border-transparent hover:border-gray-300 bg-indigo-900 dark:bg-white dark:hover:bg-gray-900 dark:hover:border-gray-900 dark:text-gray-900 dark:hover:text-white hover:bg-indigo-900 text-white hover:text-white-900 flex flex-row justify-center items-center space-x-2 py-4 rounded w-full" >
           <div>
            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/882px-Google_%22G%22_Logo.svg.png?20230305195327" width={16} height={16} />
@@ -152,10 +205,10 @@ function checkout({products}) {
             />
           </div>
         </div>
-        {/* <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">
+        <label className="mt-8 text-base leading-4 text-gray-800 dark:text-gray-50">
           Country or region
-        </label> */}
-        {/* <div className="mt-2 flex-col">
+        </label>
+         <div className="mt-2 flex-col">
           <div className="relative ">
             <button
               id="changetext"
@@ -224,13 +277,13 @@ function checkout({products}) {
             id=""
             placeholder="ZIP"
           />
-        </div> */}
+        </div>
         <button className="mt-8 border border-transparent hover:border-gray-300 dark:bg-white dark:hover:bg-gray-900 dark:text-gray-900 dark:hover:text-white dark:border-transparent bg-indigo-900 hover:bg-indigo-900 text-white hover:text-gray-900 flex justify-center items-center py-4 rounded w-full">
           <div>
             <p className="text-base leading-4">Pay {price} ₹</p>
           </div>
         </button>
-      </div>
+      </div> */}
     </div>
   </div>
 </div>

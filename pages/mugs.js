@@ -29,7 +29,7 @@ function mugs({products}) {
 
 export async function getServerSideProps(context) {
   if ( !mongoose.connections[0].readyState) {
-    await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akashdesh%401234@cluster0.nyb43ng.mongodb.net/")
+    await mongoose.connect("mongodb+srv://akashdeshmukh3030:Akash%401234@cluster0.e3olq6a.mongodb.net/?retryWrites=true&w=majority")
   }
   let products = await product.find({category : "AI/ML"})
   

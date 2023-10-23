@@ -70,7 +70,7 @@ function Header() {
               Make the best decision for your career and build your dream
               career!
             </p>
-            <a
+            <Link
               href="/signup"
               className="text-white inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-[#ff641a] hover:bg-[#d7180e] focus:ring-4 focus:ring-primary-300 focus:ring-primary-900"
             >
@@ -87,7 +87,7 @@ function Header() {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
             <img src="https://media.istockphoto.com/id/1298405320/vector/job-interview.jpg?s=612x612&w=0&k=20&c=9lTS210eeAJPByW4YREFBGSc1nv6-mH5dihBND8lhz4=" alt="Your Image" />
